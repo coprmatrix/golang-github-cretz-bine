@@ -1,6 +1,18 @@
 <services>
+  <service name="obs_scm" mode="manual">
+    <param name="url">https://github.com/cretz/tor-static</param>
+    <param name="scm">git</param>
+    <param name="revision">tor-0.3.5.7</param>
+    <param name="versionformat">@PARENT_TAG@</param>
+    <param name="versionrewrite-pattern">tor-(.*)</param>
+    <param name="changesgenerate">enable</param>
+    <param name="changesauthor">zuhhaga@gmail.com</param>
+  </service>
   <service name="go2rpm" mode="manual">
      <param name="goipath">github.com/cretz/bine</param>
+  </service>
+  <service name="run" mode="manual">
+     <param name="command">source main.sh</param>
   </service>
   <service name="perl_regex" mode="manual">
      <param name="regexfile">regex.pl</param>
