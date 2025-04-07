@@ -29,7 +29,7 @@ BuildRequires: golang
 BuildRequires: perl
 BuildRequires: perl(FindBin)
 BuildRequires: gettext-devel
-Source1: tor-static-%{master}.tar.gz
+Source1: tor-static-%{master}.obscpio
 %global prebuild %{expand:
 %{_rpmconfigdir}/rpmuncompress -x %{SOURCE1}
 ln $PWD/tor-static-%{master} $PWD/../tor-static -sfvT
