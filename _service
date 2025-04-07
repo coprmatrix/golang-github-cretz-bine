@@ -9,6 +9,12 @@
     <param name="changesgenerate">enable</param>
     <param name="changesauthor">zuhhaga@gmail.com</param>
   </service>
+  <service name="tar" mode="manual"/>
+  <service name="recompress" mode="manual">
+     <param name="compression">gz</param>
+     <param name="file">*.tar</param>
+  </service>
+
   <service name="go2rpm" mode="manual">
      <param name="goipath">github.com/cretz/bine</param>
   </service>
