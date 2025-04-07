@@ -12,6 +12,7 @@ cat << 'EOF'
 BuildRequires: gcc
 BuildRequires: gcc-c++
 BuildRequires: make
+BuildRequires: cpio
 BuildRequires: automake
 BuildRequires: autoconf
 BuildRequires: bash
@@ -31,7 +32,7 @@ BuildRequires: perl(FindBin)
 BuildRequires: gettext-devel
 Source1: tor-static-%{master}.obscpio
 %global prebuild %{expand:
-%{_rpmconfigdir}/rpmuncompress -x %{SOURCE1}
+cpio -idmv < %{SOURCE1}
 ln $PWD/tor-static-%{master} $PWD/../tor-static -sfvT
 pushd $PWD/tor-static-%{master}
 env -i HOME=$HOME PATH=$PATH go run build.go --verbose build-all
